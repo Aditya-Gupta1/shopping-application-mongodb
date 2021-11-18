@@ -1,0 +1,222 @@
+{
+  "name": "New Document",
+  "fileHandle": null,
+  "document": {
+    "id": "doc",
+    "name": "New Document",
+    "version": 13,
+    "pages": {
+      "page": {
+        "id": "page",
+        "name": "Page 1",
+        "childIndex": 1,
+        "shapes": {
+          "00392c0d-e478-4358-1ee5-020a51cff52f": {
+            "id": "00392c0d-e478-4358-1ee5-020a51cff52f",
+            "type": "rectangle",
+            "name": "Rectangle",
+            "parentId": "page",
+            "childIndex": 1,
+            "point": [
+              226.67,
+              64.33
+            ],
+            "size": [
+              197.66,
+              224.33
+            ],
+            "rotation": 0,
+            "style": {
+              "color": "black",
+              "size": "small",
+              "isFilled": false,
+              "dash": "draw",
+              "scale": 1
+            }
+          },
+          "83d0bf88-c143-49da-01c1-9be18474483a": {
+            "id": "83d0bf88-c143-49da-01c1-9be18474483a",
+            "type": "rectangle",
+            "name": "Rectangle",
+            "parentId": "page",
+            "childIndex": 2,
+            "point": [
+              525.17,
+              59.16
+            ],
+            "size": [
+              197.66,
+              224.33
+            ],
+            "rotation": 0,
+            "style": {
+              "color": "black",
+              "size": "small",
+              "isFilled": false,
+              "dash": "draw",
+              "scale": 1
+            }
+          },
+          "b26a2332-57e5-4b69-195c-021f4c87605b": {
+            "id": "b26a2332-57e5-4b69-195c-021f4c87605b",
+            "type": "rectangle",
+            "name": "Rectangle",
+            "parentId": "page",
+            "childIndex": 3,
+            "point": [
+              816.5,
+              61.17
+            ],
+            "size": [
+              197.66,
+              224.33
+            ],
+            "rotation": 0,
+            "style": {
+              "color": "black",
+              "size": "small",
+              "isFilled": false,
+              "dash": "draw",
+              "scale": 1
+            }
+          },
+          "8dff27dd-90c4-4358-341a-6986388ac027": {
+            "id": "8dff27dd-90c4-4358-341a-6986388ac027",
+            "type": "text",
+            "name": "Text",
+            "parentId": "page",
+            "childIndex": 4,
+            "point": [
+              269,
+              12
+            ],
+            "rotation": 0,
+            "text": "Customers",
+            "style": {
+              "color": "black",
+              "size": "small",
+              "isFilled": false,
+              "dash": "draw",
+              "scale": 1
+            }
+          },
+          "2d428159-d6fa-49ed-3ec1-30791636c4aa": {
+            "id": "2d428159-d6fa-49ed-3ec1-30791636c4aa",
+            "type": "text",
+            "name": "Text",
+            "parentId": "page",
+            "childIndex": 5,
+            "point": [
+              567.5,
+              10.34
+            ],
+            "rotation": 0,
+            "text": "Sellers",
+            "style": {
+              "color": "black",
+              "size": "small",
+              "isFilled": false,
+              "dash": "draw",
+              "scale": 1
+            }
+          },
+          "8e62961f-3463-4f65-0496-32fa615a5080": {
+            "id": "8e62961f-3463-4f65-0496-32fa615a5080",
+            "type": "text",
+            "name": "Text",
+            "parentId": "page",
+            "childIndex": 6,
+            "point": [
+              824.84,
+              15.01
+            ],
+            "rotation": 0,
+            "text": "Product Information",
+            "style": {
+              "color": "black",
+              "size": "small",
+              "isFilled": false,
+              "dash": "draw",
+              "scale": 1
+            }
+          },
+          "ec609361-bb47-4ef6-1da5-516214afd526": {
+            "id": "ec609361-bb47-4ef6-1da5-516214afd526",
+            "type": "text",
+            "name": "Text",
+            "parentId": "page",
+            "childIndex": 7,
+            "point": [
+              239,
+              383
+            ],
+            "rotation": 0,
+            "text": "- Add/delete/update customers\n- Add/delete/update sellers\n- Add/delete/update product information\n- ",
+            "style": {
+              "color": "black",
+              "size": "small",
+              "isFilled": false,
+              "dash": "draw",
+              "scale": 1
+            }
+          },
+          "0f171e67-f998-41c6-27b7-c44f7be3dd38": {
+            "id": "0f171e67-f998-41c6-27b7-c44f7be3dd38",
+            "type": "text",
+            "name": "Text",
+            "parentId": "page",
+            "childIndex": 8,
+            "point": [
+              240.33,
+              67
+            ],
+            "rotation": 0,
+            "text": "name\nemail\nphone\naddress",
+            "style": {
+              "color": "black",
+              "size": "small",
+              "isFilled": false,
+              "dash": "draw",
+              "scale": 1
+            }
+          },
+          "03e5411c-8b5a-44ad-236c-9c599469c254": {
+            "id": "03e5411c-8b5a-44ad-236c-9c599469c254",
+            "type": "text",
+            "name": "Text",
+            "parentId": "page",
+            "childIndex": 9,
+            "point": [
+              537.67,
+              62.33
+            ],
+            "rotation": 0,
+            "text": "name\nemail\nphone\ninventory",
+            "style": {
+              "color": "black",
+              "size": "small",
+              "isFilled": false,
+              "dash": "draw",
+              "scale": 1
+            }
+          }
+        },
+        "bindings": {}
+      }
+    },
+    "pageStates": {
+      "page": {
+        "id": "page",
+        "selectedIds": [],
+        "camera": {
+          "point": [
+            0,
+            0
+          ],
+          "zoom": 1
+        }
+      }
+    }
+  },
+  "assets": {}
+}
