@@ -15,14 +15,8 @@ class shopping_application:
         self.products_coll = self.db.get_collection(products_coll)
 
     def add_customer(self, customer: customer) -> None:
-        self.customer_coll.insert_one(json.dump(customer.__dict__))
+        self.customer_coll.insert_one(customer.__dict__)
 
     def add_seller(self, seller: seller) -> None:
-        self.seller_coll.insert_one(json.dump(seller.__dict__))
-
-    def create_customer(self, name: str, email: str, address: str, phone_no: int, orders: List[str] = None) -> customer:
-        return customer(name, email, address, phone_no, orders)
-
-    def create_seller(self, name: str, email: str, phone_no: int, inventory: List[product_information] = None, rating: int = 0) -> seller:
-        return seller(name, email, phone_no, inventory, rating)
+        self.seller_coll.insert_one(seller.__dict__)
         

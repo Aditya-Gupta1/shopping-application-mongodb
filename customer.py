@@ -1,3 +1,6 @@
+from typing import List
+
+
 class customer:
 
     def __init__(self, name: str, email: str, address: str, phone_no: int, orders: List[str]) -> None:
