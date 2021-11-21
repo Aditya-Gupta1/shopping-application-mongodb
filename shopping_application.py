@@ -19,4 +19,17 @@ class shopping_application:
 
     def add_seller(self, seller: seller) -> None:
         self.seller_coll.insert_one(seller.__dict__)
-        
+
+    def print_application_details(self):
+        customers = self.customer_coll.find()
+        sellers = self.seller_coll.find()
+        products = self.products_coll.find()
+        print("Customer Details:")
+        for cust in customers:
+            print(cust)
+        print("Seller Details:")
+        for sel in sellers:
+            print(sel)
+        print("Product Details:")
+        for prod in products:
+            print(prod)
