@@ -4,7 +4,7 @@
   "document": {
     "id": "doc",
     "name": "New Document",
-    "version": 13,
+    "version": 14,
     "pages": {
       "page": {
         "id": "page",
@@ -127,11 +127,11 @@
             "parentId": "page",
             "childIndex": 6,
             "point": [
-              824.84,
-              15.01
+              859.51,
+              13.35
             ],
             "rotation": 0,
-            "text": "Product Information",
+            "text": "Products",
             "style": {
               "color": "black",
               "size": "small",
@@ -198,6 +198,28 @@
               "isFilled": false,
               "dash": "draw",
               "scale": 1
+            }
+          },
+          "8c3fef1b-36bc-4e7f-325c-da8df0a917ef": {
+            "id": "8c3fef1b-36bc-4e7f-325c-da8df0a917ef",
+            "type": "text",
+            "name": "Text",
+            "parentId": "page",
+            "childIndex": 10,
+            "point": [
+              835.1600000000001,
+              62.17999999999999
+            ],
+            "rotation": 0,
+            "text": "name\nprice\ndescription\ntags",
+            "style": {
+              "color": "black",
+              "size": "small",
+              "isFilled": false,
+              "dash": "draw",
+              "scale": 1,
+              "font": "script",
+              "textAlign": "start"
             }
           }
         },

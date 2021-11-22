@@ -1,10 +1,7 @@
-from typing import List
 from pymongo import MongoClient
 from customer import customer
 from product import product
-from product_information import product_information
 from seller import seller
-import json
 
 class shopping_application:
 
