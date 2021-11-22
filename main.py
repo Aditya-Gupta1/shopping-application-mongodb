@@ -5,7 +5,7 @@ from pymongo import MongoClient
 from utils import create_customer, create_product, create_seller
 
 application = shopping_application(MongoClient(), "ShoppingApplication", "customers", "sellers", "products")
-application.reset_application()
+# application.reset_application()
 
 # adding customers
 customer1 = create_customer("Aditya", "Aditya@gmail.com", "Aditya-address", 12345678)
@@ -48,16 +48,12 @@ application.add_product(product4)
 application.add_product(product5)
 application.add_product(product6)
 
-# create product information
-product1_info = application.create_product_information("Book", 5)
-product2_info = application.create_product_information("Keyboard", 10)
-product3_info = application.create_product_information("T-Shirt", 20)
-product4_info = application.create_product_information("Lamp", 5)
-product5_info = application.create_product_information("Charger", 15)
-product6_info = application.create_product_information("Table", 2)
-
 # add products to inventory
-application.add_to_inventory("seller1@gmail.com", product1_info)
-application.add_to_inventory("seller2@gmail.com", product2_info)
+application.add_to_inventory("seller1@gmail.com", "Book", 5)
+application.add_to_inventory("seller2@gmail.com", "Keyboard", 10)
+application.add_to_inventory("seller3@gmail.com", "T-Shirt", 20)
+application.add_to_inventory("seller4@gmail.com", "Lamp", 5)
+application.add_to_inventory("seller5@gmail.com", "Charger", 100)
+application.add_to_inventory("seller1@gmail.com", "Table", 5)
 
 application.print_application_details()

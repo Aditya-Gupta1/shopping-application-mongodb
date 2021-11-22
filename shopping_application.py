@@ -23,17 +23,13 @@ class shopping_application:
 
     def add_product(self, product: product) -> None:
         self.products_coll.insert_one(product.__dict__)
-    
-    def create_product_information(self, product_name: str, quantity: int) -> product_information:
-        product_id = self.products_coll.find_one({"name": product_name}, {"_id": 1, "name": 0, "price": 0, "description": 0, "tags": 0})
-        if not product_id:
-            print("Not present")
-            return None
-        return product_information(product_id, quantity)
-        
-    def add_to_inventory(self, seller_email: str, product_info: product_information) -> None:
-        self.seller_coll.update_one({"email": seller_email}, {"$push": {"inventory": product_info.__dict__}})
-        print(f"Product was added successfully to inventory of the Seller[{seller_email}]")
+
+    def add_to_inventory(self, seller_email: str, product_name: str, quantity: int) -> None:
+        product_id = self.get_product_id(product_name)
+        self.seller_coll.update_one({"email": seller_email}, {"$push": {"inventory": {"product_id": product_id["_id"], "quantity": quantity}}})
+
+    def get_product_id(self, product_name: str):
+        return self.products_coll.find_one({"name": product_name}, {"_id": 1, "name": 0, "price": 0, "description": 0, "tags": 0})
 
     def print_application_details(self):
         customers = self.customer_coll.find()
