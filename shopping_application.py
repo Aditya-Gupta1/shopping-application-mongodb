@@ -1,4 +1,6 @@
 from pymongo import MongoClient
+from pymongo.message import _MODIFIERS
+from pymongo.results import UpdateResult
 from customer import customer
 from product import product
 from seller import seller
@@ -27,6 +29,26 @@ class shopping_application:
 
     def get_product_id(self, product_name: str):
         return self.products_coll.find_one({"name": product_name}, {"_id": 1, "name": 0, "price": 0, "description": 0, "tags": 0})
+
+    def update_customer_details(self, customer_email: str, address: str = None, phone_no: int = None) -> None:
+        if not address and not phone_no:
+            print("Provide either an address or a phone no to update.")
+            return
+        if address and phone_no:
+            result: UpdateResult = self.customer_coll.update_one({"email": customer_email}, {"$set": {"address": address, "phone_no": phone_no}})
+        elif address:
+            result: UpdateResult = self.customer_coll.update_one({"email": customer_email}, {"$set": {"address": address}})
+        else:
+            result: UpdateResult = self.customer_coll.update_one({"email": customer_email}, {"$set": {"phone_no": phone_no}})
+        
+        if result.matched_count == 0:
+            print(f"No customer with the email {customer_email} is present in DB.")
+        elif result.matched_count == 1 and result.modified_count == 0:
+            print("Nothing to modify.")
+        elif result.matched_count == 1 and result.modified_count == 1 and result.acknowledged:
+            print("Customer Details Updated Successfully.")
+        else:
+            print("Something went wrong while updating.")
 
     def print_application_details(self):
         customers = self.customer_coll.find()
