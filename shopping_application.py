@@ -49,6 +49,18 @@ class shopping_application:
             print("Customer Details Updated Successfully.")
         else:
             print("Something went wrong while updating.")
+    
+    def update_seller_details(self, seller_email: str, phone_no: int) -> None:
+        result = self.seller_coll.update_one({"email": seller_email}, {"$set": {"phone_no": phone_no}})
+        
+        if result.matched_count == 1 and result.modified_count == 1 and result.acknowledged:
+            print("Details updated Successfully.")
+        elif result.matched_count == 1 and result.modified_count == 0:
+            print("Nothing to modify.")
+        elif result.matched_count == 0:
+            print("No seller with given email found!")
+        else:
+            print("Something went wrong while updating.")
 
     def print_application_details(self):
         customers = self.customer_coll.find()

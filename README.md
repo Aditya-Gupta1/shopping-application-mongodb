@@ -16,11 +16,12 @@ Design can be found in the file `Design.tldr`.
 * Add a product.
 * Add a product to the inventory of a seller.
 * Update customer info.
+* Update seller info
 
 ### To-do
-* Update seller info.
 * Delete a customer.
 * Delete a seller.
+* Update seller inventory.
 * Add an order to customer.
 * Schema validation for customers, sellers and products.
 
@@ -29,3 +30,4 @@ Design can be found in the file `Design.tldr`.
 1. Every product has a unique name.
 2. All sellers and customers have a unique email.
 3. Only address and phone no of customers can be edited.
+4. Only seller phone no can be edited.

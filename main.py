@@ -56,7 +56,10 @@ application = shopping_application(MongoClient(), "ShoppingApplication", "custom
 # application.add_to_inventory("seller5@gmail.com", "Charger", 100)
 # application.add_to_inventory("seller1@gmail.com", "Table", 5)
 
-# update customer address
-application.update_customer_details("Suresh@gmail.com", address= "Suresh-updated-address-3", phone_no= 563234)
+# update customer details
+# application.update_customer_details("Suresh@gmail.com", address= "Suresh-updated-address-3", phone_no= 563234)
 
-# application.print_application_details()
+# update seller details
+application.update_seller_details("seller1@gmail.com", 987655)
+
+application.print_application_details()
