@@ -61,6 +61,13 @@ class shopping_application:
             print("No seller with given email found!")
         else:
             print("Something went wrong while updating.")
+    
+    def delete_customer(self, customer_email: str) -> None:
+        result = self.customer_coll.delete_one({"email": customer_email})
+        if result.acknowledged and result.deleted_count == 1:
+            print(f"Customer[{customer_email}] deleted successfully.")
+        else:
+            print("Something went wrong.")
 
     def print_application_details(self):
         customers = self.customer_coll.find()
