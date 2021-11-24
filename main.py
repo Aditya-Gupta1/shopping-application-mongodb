@@ -60,6 +60,9 @@ application = shopping_application(MongoClient(), "ShoppingApplication", "custom
 # application.update_customer_details("Suresh@gmail.com", address= "Suresh-updated-address-3", phone_no= 563234)
 
 # update seller details
-application.update_seller_details("seller1@gmail.com", 987655)
+# application.update_seller_details("seller1@gmail.com", 987655)
 
-application.print_application_details()
+# delete customer details
+application.delete_customer("Gobi@gmail.com")
+
+# application.print_application_details()
