@@ -18,9 +18,9 @@ Design can be found in the file `Design.tldr`.
 * Update customer info.
 * Update seller info
 * Delete a customer.
+* Delete a seller.
 
 ### To-do
-* Delete a seller.
 * Update seller inventory.
 * Add an order to customer.
 * Schema validation for customers, sellers and products.
