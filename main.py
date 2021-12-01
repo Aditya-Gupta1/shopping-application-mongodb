@@ -70,5 +70,6 @@ application = shopping_application(MongoClient(), "ShoppingApplication", "custom
 
 # update inventory
 # application.increment_product_count("seller2@gmail.com", "Keyboard", 1)
+application.decrease_product_count("seller2@gmail.com", "Keyboard", 1)
 
 application.print_application_details()
