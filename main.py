@@ -66,6 +66,9 @@ application = shopping_application(MongoClient(), "ShoppingApplication", "custom
 # application.delete_customer("Gobi@gmail.com")
 
 # delete seller details
-application.delete_seller("seller1@gmail.com")
+# application.delete_seller("seller1@gmail.com")
 
-# application.print_application_details()
+# update inventory
+# application.increment_product_count("seller2@gmail.com", "Keyboard", 1)
+
+application.print_application_details()
