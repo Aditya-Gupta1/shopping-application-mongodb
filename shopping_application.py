@@ -1,4 +1,5 @@
 from pymongo import MongoClient
+from pymongo.command_cursor import CommandCursor
 from pymongo.message import _MODIFIERS
 from pymongo.results import UpdateResult
 from customer import customer
@@ -75,6 +76,19 @@ class shopping_application:
             print(f"Seller[{seller_email}] deleted successfully.")
         else:
             print("Something went wrong.")
+    
+    def increment_product_count(self, seller_email: str, product_name: str, quantity: int = 1) -> None:
+        product_details = self.products_coll.find_one({"name": product_name})
+        if not product_details:
+            print("No product with the given name found")
+            return
+        product_id = product_details["_id"]
+        seller_possible: UpdateResult = self.seller_coll.update_one({"email": seller_email, "inventory.product_id": product_id}, {"$inc": {"inventory.$.quantity": quantity}})
+        if seller_possible.acknowledged and seller_possible.matched_count == 1 and seller_possible.modified_count == 1:
+            print("Quantity modified successfully.")
+        else:
+            print("Something went wrong with the details provided.")
+        
 
     def print_application_details(self):
         customers = self.customer_coll.find()
