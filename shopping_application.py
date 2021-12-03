@@ -14,7 +14,21 @@ class shopping_application:
         self.client = client
         self.db = client.get_database(db_name)
         self.customer_coll = self.db.get_collection(customer_coll)
-        self.seller_coll = self.db.get_collection(seller_coll)
+
+        # creating a new "sellers" collection
+
+        # 1. Drop any existing collection with same name
+        self.db.drop_collection(seller_coll)
+        # 2. Create a new collection
+        self.seller_coll = self.db.create_collection(seller_coll)
+        # 3. Load the seller validator
+        seller_validator_file = open("validators\seller_validator.json")
+        seller_validator = json.load(seller_validator_file)
+        seller_validator_file.close()
+        # 4. Add the validator to sellers collection
+        commands = OrderedDict([("collMod", seller_coll), ("validator", seller_validator), ("validationLevel", "moderate")])
+        self.db.command(commands)
+        print("Sellers Collection Created Successfully.")
 
         # creating a new "products" collection
 
