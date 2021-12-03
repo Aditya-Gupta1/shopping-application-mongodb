@@ -1,3 +1,4 @@
+from collections import OrderedDict
 from pymongo import MongoClient
 from pymongo.command_cursor import CommandCursor
 from pymongo.message import _MODIFIERS
@@ -5,6 +6,7 @@ from pymongo.results import UpdateResult
 from customer import customer
 from product import product
 from seller import seller
+import json
 
 class shopping_application:
 
@@ -13,7 +15,21 @@ class shopping_application:
         self.db = client.get_database(db_name)
         self.customer_coll = self.db.get_collection(customer_coll)
         self.seller_coll = self.db.get_collection(seller_coll)
-        self.products_coll = self.db.get_collection(products_coll)
+
+        # creating a new "products" collection
+
+        # 1. Drop any existing collection with same name
+        self.db.drop_collection(products_coll)
+        # 2. Create a new collection
+        self.products_coll = self.db.create_collection(products_coll)
+        # 3. Load the product validator
+        product_validator_file = open("validators\product_validator.json")
+        product_validator = json.load(product_validator_file)
+        product_validator_file.close()
+        # 4. Add the validator to products collection
+        commands = OrderedDict([("collMod", products_coll), ("validator", product_validator), ("validationLevel", "moderate")])
+        self.db.command(commands)
+        print("Products Collection Created Successfully.")
 
     def add_customer(self, customer: customer) -> None:
         self.customer_coll.insert_one(customer.__dict__)
