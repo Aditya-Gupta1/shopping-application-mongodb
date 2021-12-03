@@ -13,7 +13,21 @@ class shopping_application:
     def __init__(self, client: MongoClient, db_name: str, customer_coll: str, seller_coll: str, products_coll: str) -> None:
         self.client = client
         self.db = client.get_database(db_name)
-        self.customer_coll = self.db.get_collection(customer_coll)
+
+        # creating a new "customers" collection
+
+        # 1. Drop any existing collection with same name
+        self.db.drop_collection(customer_coll)
+        # 2. Create a new collection
+        self.customer_coll = self.db.create_collection(customer_coll)
+        # 3. Load the customer validator
+        customer_validator_file = open("validators\customer_validator.json")
+        customer_validator = json.load(customer_validator_file)
+        customer_validator_file.close()
+        # 4. Add the validator to sellers collection
+        commands = OrderedDict([("collMod", customer_coll), ("validator", customer_validator), ("validationLevel", "moderate")])
+        self.db.command(commands)
+        print("Customers Collection Created Successfully.")
 
         # creating a new "sellers" collection
 
