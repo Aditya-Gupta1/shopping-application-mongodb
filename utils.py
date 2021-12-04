@@ -12,4 +12,4 @@ def create_seller(name: str, email: str, phone_no: int, inventory: List[dict] = 
         return seller(name, email, phone_no, inventory, rating)
 
 def create_product(name: str, price: float, description: str, tags: List[str]) -> product:
-        return product(name, price, description, tags)
+        return product(name, float(price), description, tags)

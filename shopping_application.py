@@ -99,7 +99,7 @@ class shopping_application:
         result = self.seller_coll.update_one({"email": seller_email}, {"$set": {"phone_no": phone_no}})
         
         if result.matched_count == 1 and result.modified_count == 1 and result.acknowledged:
-            print("Details updated Successfully.")
+            print("Seller details updated Successfully.")
         elif result.matched_count == 1 and result.modified_count == 0:
             print("Nothing to modify.")
         elif result.matched_count == 0:
